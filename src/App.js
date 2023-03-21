@@ -1,25 +1,69 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect, useState } from "react";
+ //'http://openweathermap.org/img/wn/'
 
 function App() {
+
+  const [temperature, setTemperature] = React.useState('');
+  const [description, setDescription] = React.useState('');
+  const [icon, setIcon] = React.useState('');
+  const [city, setCity] = React.useState('');
+  const[isReady,setReady]= React.useState(false);
+
+  const inputChanged = ( event)  => {
+    setCity(event.target.value);
+  };
+
+  const getWeather = () => {
+
+  //React.useEffect(() => {
+    fetch(`${process.env.REACT_APP_API_URL}/weather?q=${city}&APPID=${process.env.REACT_APP_API_KEY}`)
+      .then(response => response.json())
+      .then(data => {
+        setTemperature(data.main.temp)
+        setDescription(data.weather[0].description)
+        setIcon(data.weather[0].icon)
+        setReady(true)
+
+      })
+      .catch(err => console.error(err))
+  //})
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>
+          Weather app
+        </h1>
+        <h3>
+          current weather
+        </h3>
       </header>
+
+      <body className="App-body">
+        <p className="App-bold">Find current weather of your city: </p>
+        <input
+          type= "text"
+          name="city"
+          value= {city}
+          onChange= {inputChanged}
+        > 
+        </input>
+
+        <button className={"App-button"} onClick={getWeather}>search</button>
+
+        <h4>{city} </h4>
+        <p>Temperature: {(temperature-273.15).toFixed(1)} Celsius</p>
+        <p>Weather: {description}</p>
+        <img src= {`${process.env.REACT_APP_ICON_URL}`+(icon)+'@2x.png'} />
+
+      </body>
+    
     </div>
   );
 }
 
 export default App;
+
+
