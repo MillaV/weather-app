@@ -9,6 +9,26 @@
   }
 }
 
+input[type=text] {
+  margin: 5px 5px 5px;
+  border: 2px solid #555;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('./searchicon.png');
+  background-position: 6px 6px;
+  background-repeat: no-repeat;
+  padding: 15px 15px 15px 45px;
+}
+
+input[type=text]:focus {
+  background-color: rgba(227, 245, 252, 0.703);
+  background-image: none;
+  background-position: 6px 6px;
+
+}
+
+
 .App-header {
   background-color: #083856;
   min-height: 15vh;
@@ -26,26 +46,28 @@
   padding: 40px;
   font-family: Arial;
   text-align: center;
+  font-size: medium;
+
 }
 
 .App-button {
   background-color: #467c9e;
   border: none;
   color: white;
-  padding: 2px 10px;
+
+  padding: 15px 15px 15px;
+  border-radius: 4px;
+  border: 2px solid #555;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .App-bold {
   font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {

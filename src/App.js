@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from "react";
- //'http://openweathermap.org/img/wn/'
+import { Container } from 'semantic-ui-react';
+
 
 function App() {
 
@@ -36,30 +37,30 @@ function App() {
         <h1>
           Weather app
         </h1>
-        <h3>
-          current weather
-        </h3>
       </header>
 
       <body className="App-body">
+
         <p className="App-bold">Find current weather of your city: </p>
-        <input
+        
+        <input className="App-input"
           type= "text"
           name="city"
           value= {city}
           onChange= {inputChanged}
+          placeholder="City name..."
         > 
         </input>
 
-        <button className={"App-button"} onClick={getWeather}>search</button>
-
-        <h4>{city} </h4>
+        <button className={"App-button"} onClick={getWeather}>Search</button>
+        
+        <h4> {city} </h4>
         <p>Temperature: {(temperature-273.15).toFixed(1)} Celsius</p>
         <p>Weather: {description}</p>
         <img src= {`${process.env.REACT_APP_ICON_URL}`+(icon)+'@2x.png'} />
 
       </body>
-    
+
     </div>
   );
 }
