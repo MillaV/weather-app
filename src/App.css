@@ -15,7 +15,7 @@ input[type=text] {
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
-  background-image: url('./searchicon.png');
+  background-image: url('images/searchicon.png');
   background-position: 6px 6px;
   background-repeat: no-repeat;
   padding: 15px 15px 15px 45px;
@@ -38,7 +38,7 @@ input[type=text]:focus {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  background-image: url('./clouds.jpg');
+  background-image: url('images/clouds.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -71,7 +71,7 @@ input[type=text]:focus {
   font-weight: bold;
 }
 
-: @keyframes App-logo-spin {
+@keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
