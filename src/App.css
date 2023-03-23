@@ -23,29 +23,26 @@ input[type=text] {
 
 input[type=text]:focus {
   background-color: rgba(227, 245, 252, 0.703);
-  background-image: none;
   background-position: 6px 6px;
 
 }
 
 
 .App-header {
-  background-color: #083856;
   min-height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-  background-image: url('images/clouds.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(rgba(0, 0, 0, 0.122), rgba(0, 0, 0, 0.773));
+  background-color: #467c9e;
 }
 
 .App-body {
   background-color: #ffffff;
-  color: rgb(30, 30, 33);
+  color: rgb(0, 0, 0);
   padding: 40px;
   font-family: Arial;
   text-align: center;
